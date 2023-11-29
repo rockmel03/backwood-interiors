@@ -1,0 +1,552 @@
+@font-face {
+    font-family: "font1";
+    src: url(./assets/fonts/tinvwl-webfont.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --main-bg: #fefefe;
+    --white: #ffff;
+    --black: #000;
+    --gray: #2e3436;
+    --gray-dark: #242a2c;
+    --font-1: "main-font", sans-serif;
+    --font-2: "Montserrat", sans-serif;
+    --primary-color: #664d3b;
+}
+
+/* ---------------------------------------------nav bar section starts */
+.nav {
+    font-family: "main-font", sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 0rem 2rem;
+    box-shadow: 0 0 8px #00000050;
+    height: 10vh;
+
+    /* position: sticky;
+    top: 0;
+    left: 0; */
+    z-index: 999;
+}
+
+#logo {
+    width: 11vmax;
+}
+
+.navlinks {
+    height: 100%;
+    /* background-color: rgb(167, 158, 158); */
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navlinks li {
+    /* background-color: blanchedalmond; */
+    height: 100%;
+    display: flex;
+    align-items: c;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.navlinks li a {
+    /* background-color: rgb(131, 100, 100); */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.navlinks li>a::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    height: 2px;
+    width: 100%;
+    scale: 0;
+    z-index: 9;
+    transform-origin: center;
+    transition: 0.2s all linear;
+}
+
+.navlinks li>a:hover::after {
+    scale: 1;
+}
+.navlinks .dropdown-links{
+    position: absolute;
+    top: 10vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 99;
+    display: none;
+    transition: all .2s ease;
+}
+.navlinks .dropdown-links a {
+    padding: 1rem 1.5rem;
+}
+
+.navlinks li:hover .dropdown-links {
+    display: block;
+}
+.nav #menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------nav bar section ends */
+/* ---------------------------------------------sidenav section starts */
+#sidenav {
+    width: 350px;
+    height: 100vh;
+    background-color: #000000;
+    color: var(--white);
+    padding: 2rem;
+    padding-left: 5rem;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(350px);
+    z-index: 99;
+}
+
+#sidenav-close-btn {
+    font-size: 1.2rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    cursor: pointer;
+}
+
+#sidenav .sidenav-links {
+    margin: 80px 0;
+    list-style: none;
+}
+
+#sidenav .sidenav-links li {
+    padding: 5px 0;
+}
+
+#sidenav .sidenav-links li a {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.sidenav-links .dropdown-links {
+    padding-left: 1rem;
+    list-style: none;
+    display: none;
+    transition: all .5s ease;
+}
+.sidenav-links li:hover .dropdown-links{
+    display: block;
+}
+.widge-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 2rem;
+}
+
+.widge-wrapper .search-box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+
+    border-bottom: 2px solid var(--white);
+}
+
+.widge-wrapper .search-box input,
+.widge-wrapper .search-box button {
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-bottom: 0.5rem;
+}
+
+.widge-wrapper .search-box input {
+    font-size: 1rem;
+}
+
+.widge-wrapper .search-box button {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.widge-wrapper a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.widge-wrapper a i {
+    font-size: 1.4rem;
+}
+
+.widge-wrapper .elem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---------------------------------------------sidenav section ends */
+
+/* products = =============================================================================================================================================== */
+/* style for products  start */
+
+.products-lending-img {
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.products-lending-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.products-lending-img h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.products-lending-text {
+    display: flex;
+    align-items: center;
+    height: 45vh;
+    margin: 1rem 0;
+}
+
+.products-lending-text .left-text {
+    color: var(--primary-color);
+    width: 35%;
+    height: 100%;
+    padding: 1rem 2rem;
+    border-right: 3px solid var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.products-lending-text .left-text img {
+    width: 100%;
+}
+
+.products-lending-text .left-text h1 {
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.products-lending-text .left-text p {
+    text-align: center;
+    font-size: 1vw;
+}
+
+.products-lending-text .right-text {
+    color: var(--primary-color);
+    width: 65%;
+    padding: 1rem 2rem;
+}
+
+.products-lending-text .right-text p {
+    font-size: 1vw;
+
+}
+.products-lending-text .right-text h1 {
+    font-size: 2vw;
+
+}
+.products-lending-text .right-text p {
+    font-size: 1vw;
+    margin: 10px 0;
+
+}
+.products-catagory {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+
+    margin: 5vw 0;
+}
+
+.product {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product .product-img-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    display: inline-block;
+}
+
+.product h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.product .product-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    position: absolute;
+}
+
+.product .product-img-container .front-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product .product-img-container .back-img {
+    opacity: 0;
+    transition: opacity linear 0.2s;
+}
+
+.product .product-img-container:hover .back-img {
+    opacity: 1;
+}
+
+.about-product {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 90%;
+    height: 90vh;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+    padding: 1rem;
+}
+
+.about-product i {
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.about-product img {
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-product div {
+    width: 35%;
+
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.about-product div h2 {
+    font-size: 2vw;
+    text-align: left;
+}
+
+.about-product div p {
+    margin: 10px 0;
+    font-size: 1vw;
+}
+
+.about-product div ul li {
+    list-style: none;
+    font-size: 1vw;
+}
+
+/* products-catagory ends */
+
+/* style for products  end */
+
+/* footer section styles=================================================================================================================================== */
+
+/* ----------------------------footer section starts */
+#footer {
+    width: 100%;
+}
+
+.footer-top {
+    background-color: var(--gray);
+    color: var(--white);
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    padding: 3rem 0;
+}
+
+.footer-top #logo {
+    width: 300px;
+}
+
+.footer-top>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-top a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.footer-top-links {
+    text-transform: uppercase;
+}
+
+.footer-top>div a:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.footer-top .email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-top .email button,
+.footer-top .email input {
+    background-color: transparent;
+    color: inherit;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.2rem;
+    border: none;
+    outline: none;
+}
+
+.footer-top .email input {
+    border-bottom: 1px solid var(--white);
+}
+
+.footer-top .email input::placeholder {
+    font-weight: bold;
+    opacity: 1;
+    color: inherit;
+}
+
+.footer-top .email button {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.footer-top>div:nth-last-child(1) h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    background-color: var(--gray-dark);
+    color: var(--white);
+    height: 10vh;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------footer section ends */
+
+@media (max-width: 1200px) {
+    .navlinks {
+        display: none;
+    }
+}
+
+@media (max-width: 770px) {
+    #logo {
+        width: 20vw;
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .footer-top>div:nth-last-child(1) h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    #logo {
+        width: 36vw;
+    }
+
+    .footer-top {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-top #logo {
+        width: 300px;
+    }
+
+    .footer-top>div:nth-last-child(1) h3 {
+        font-size: 4vw;
+    }
+}
