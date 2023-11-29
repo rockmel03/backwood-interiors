@@ -359,6 +359,7 @@ body {
 
 .product .product-img-container:hover .back-img {
     opacity: 1;
+    cursor: pointer;
 }
 
 .about-product {
