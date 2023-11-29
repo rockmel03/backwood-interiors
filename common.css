@@ -40,10 +40,11 @@ body {
     padding: 0rem 2rem;
     box-shadow: 0 0 8px #00000050;
     height: 10vh;
+    width: 100%;
 
-    /* position: sticky;
+    position: sticky;
     top: 0;
-    left: 0; */
+    left: 0;
     z-index: 999;
 }
 
