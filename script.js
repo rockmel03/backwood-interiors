@@ -1,19 +1,6 @@
 
-
 animations()
 function animations() {
-    const tl = gsap.timeline();
-
-tl.from(".nav #logo",{
-    x: -100,
-    opacity: 0,
-    duration: .5,
-})
-tl.from(".nav a",{
-    y: -100,
-    duration: .5,
-    stagger: .2,
-})
 
 gsap.from(".hero-left",{
     y : "-1000",
@@ -73,21 +60,6 @@ gsap.from("#products-img",{
 }
 
 
-
-document.querySelector('#menu').addEventListener('click',()=>{
-    gsap.to('#sidenav',{
-        x : 0,
-        opacity:1,
-        duration: .5
-    })
-})
-document.querySelector('#sidenav-close-btn').addEventListener('click',()=>{
-    gsap.to('#sidenav',{
-        x : "100%",
-        opacity:0,
-        duration: .5
-    })
-})
 
 const container = document.getElementById("products-img");
 // where "container" is the id of the container
